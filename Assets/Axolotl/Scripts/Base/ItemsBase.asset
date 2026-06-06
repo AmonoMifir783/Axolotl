@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd7b39d077ce854c96407e5359ca4db, type: 3}
+  m_Name: ItemsBase
+  m_EditorClassIdentifier: 
+  Items:
+  - tag: 6
+    prefabItem: {fileID: 6286072430085274463, guid: 99a0612416030b04f868dc03ffe70e2b, type: 3}
+    PickUp: 0
+    Transform: 1
+    Break: 0
+    parentClasses: 
+    DropedTag: 0000000001000000
+  - tag: 2
+    prefabItem: {fileID: 5535853305585324553, guid: 20553e07daead8743b4019a768147c15, type: 3}
+    PickUp: 1
+    Transform: 1
+    Break: 0
+    parentClasses: 
+    DropedTag: 03000000
+  - tag: 0
+    prefabItem: {fileID: 4311185819723759658, guid: a58dcd02c8629b04ba5d8e2ecdfb9f3f, type: 3}
+    PickUp: 1
+    Transform: 0
+    Break: 0
+    parentClasses: 
+    DropedTag: 
+  - tag: 1
+    prefabItem: {fileID: 1190401499601619647, guid: 1cff2532d417eb143b4c7c316ae3561f, type: 3}
+    PickUp: 1
+    Transform: 0
+    Break: 0
+    parentClasses: 
+    DropedTag: 
+  - tag: 3
+    prefabItem: {fileID: 818575775794664405, guid: 2835b0988cf68d440a327fb195c690ca, type: 3}
+    PickUp: 1
+    Transform: 0
+    Break: 0
+    parentClasses: 
+    DropedTag: 
+  - tag: 5
+    prefabItem: {fileID: 1642303731483048629, guid: 9241439991e035441bed93994b1c6be3, type: 3}
+    PickUp: 1
+    Transform: 0
+    Break: 0
+    parentClasses: 
+    DropedTag: 
