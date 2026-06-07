@@ -12,19 +12,18 @@ public class ItemsBase : ScriptableObject
 public class ItemInform
 {
     public ItemTag tag;
-
     public GameObject prefabItem;
-
-
-// родительский класс
+    
     public bool PickUp;
     public bool Transform;
     public bool Break;
-    //--------------------
+    
     public ParentClass[] parentClasses;
-//-------------------
-
     public ItemTag[] DropedTag;
+    
+    public float hp;
+    public float st;
+    public float hu;
 }
 
 public enum ItemTag
@@ -35,11 +34,12 @@ public enum ItemTag
     Flint,
     BigAlgae,
     Coral,
-    Alga_square
+    Alga_square,
+    Destructible_Stone
 }
 
 public enum ParentClass
 {
-    R,
+    Edible,
     E
 }

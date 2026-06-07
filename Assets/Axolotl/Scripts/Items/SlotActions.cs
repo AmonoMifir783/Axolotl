@@ -28,11 +28,11 @@ public class SlotActions : MonoBehaviour
         }
     }
 
-    // Дополнительный метод для получения текущего предмета
-    // public ItemInform GetCurrentItem()
-    // {
-    //     return slot.currentItem;
-    // }
+    //Дополнительный метод для получения текущего предмета
+    public string GetCurrentItem()
+    {
+        return slot.Tag;
+    }
 
     // // Дополнительный метод для проверки пустоты
     // public bool IsSlotEmpty()

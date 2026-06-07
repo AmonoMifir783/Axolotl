@@ -29,7 +29,12 @@ public class ItemSystemControl : MonoBehaviour
         {
             ClearItemDataToSlotActions();
         }
-
+        
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            AplicationItemToSlotActions(slotActions.GetCurrentItem());
+        }
+        
         if (Input.GetKeyDown(KeyCode.R))
         {
             drop.IdentificationDrop(targetObject);
@@ -59,5 +64,13 @@ public class ItemSystemControl : MonoBehaviour
     private void ClearItemDataToSlotActions()
     {
         slotActions.ClearSlot();
+    }
+
+    private void AplicationItemToSlotActions(string _objectTag)
+    {
+        if(itemsActions.AplicationObject(_objectTag))
+        {
+            ClearItemDataToSlotActions();
+        }
     }
 }

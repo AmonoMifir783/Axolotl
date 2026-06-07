@@ -32,25 +32,6 @@ public class Drop : MonoBehaviour
 
     private ItemTag GetItemTagFromObject(GameObject obj)
     {
-        // Способ 1: Попробовать получить тег из компонента
-        ItemTagComponent tagComponent = obj.GetComponent<ItemTagComponent>();
-        if (tagComponent != null)
-        {
-            return tagComponent.itemTag;
-        }
-
-        // Способ 2: Попробовать определить по имени объекта
-        string objName = obj.name.ToLower();
-        foreach (ItemTag tag in System.Enum.GetValues(typeof(ItemTag)))
-        {
-            string tagName = tag.ToString().ToLower();
-            if (objName.Contains(tagName))
-            {
-                return tag;
-            }
-        }
-
-        // Способ 3: Попробовать определить по тегу Unity
         foreach (ItemTag tag in System.Enum.GetValues(typeof(ItemTag)))
         {
             if (obj.CompareTag(tag.ToString()))

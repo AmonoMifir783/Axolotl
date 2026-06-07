@@ -12,6 +12,7 @@ TagManager:
   - Flint
   - BigAlgae
   - Alga_square
+  - Destructible_Stone
   layers:
   - Default
   - TransparentFX

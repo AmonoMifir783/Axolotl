@@ -20,7 +20,7 @@ public class CharacterMove : MonoBehaviour
 
     public void Move(Vector2 movementVector)
     {
-        Vector3 move = transform.forward * movementVector.y + transform.right * movementVector.x;
+        Vector3 move = (transform.forward * movementVector.y + transform.right * movementVector.x) * -1f;
         move = move * speedMove * Time.deltaTime;
         characterController.Move(move);
 
