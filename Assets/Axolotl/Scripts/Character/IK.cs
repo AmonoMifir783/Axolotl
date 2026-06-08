@@ -17,10 +17,12 @@ public class IK : MonoBehaviour
            // if(Physics.SphereCast(ray, 1f, out hitInfo, 0.5f))
             Vector3 direction = Vector3.down; // Direction of the ray
 
-            if (Physics.Raycast(ray, out hit, 1f, layerToHit))
+            if (Physics.Raycast(ray, out hit, 1.4f, layerToHit))
+            //if(Physics.SphereCast(ray, 1f, out hit, 0.5f, layerToHit))
             {
-                foot.position = hit.point + Vector3.up * 0.05f;
+                foot.position = hit.point + Vector3.up * 0.22f;
                 Debug.Log("Hit: " + hit.transform.name);
+                Debug.DrawRay(foot.transform.position, Vector3.down * 10f, Color.red, layerToHit);
             }
         }
     }
