@@ -8,6 +8,7 @@ public class ItemSystemControl : MonoBehaviour
     public Drop drop;
     public GameObject targetObject;
     public bool checkAdded;
+    public CraftsSystem craftsSystem;
 
 
     void Update()
@@ -27,6 +28,7 @@ public class ItemSystemControl : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            DropItemDataToSlotActions();
             ClearItemDataToSlotActions();
         }
         
@@ -40,7 +42,14 @@ public class ItemSystemControl : MonoBehaviour
             drop.IdentificationDrop(targetObject);
         }
         
-        
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            if(craftsSystem.CraftItem(slotActions.GetCurrentItem(), targetObject))
+            {
+                objectIdentification.RemoveObject();
+                ClearItemDataToSlotActions();
+            }
+        }
     }
 
     private void UpdateTargetObject()
@@ -58,17 +67,24 @@ public class ItemSystemControl : MonoBehaviour
 
     private void TransferItemDataToSlotActions(GameObject obj)
     {
-        checkAdded = slotActions.AddItem(obj.tag);
+        checkAdded = slotActions.AddItem(obj);
     }
 
+    private void DropItemDataToSlotActions()
+    {
+        //drop.DropSingleItem(transform.position, drop.GetItemTagFromObject(targetObject));
+        slotActions.DropItem();
+        ClearItemDataToSlotActions();
+    }
+    
     private void ClearItemDataToSlotActions()
     {
         slotActions.ClearSlot();
     }
 
-    private void AplicationItemToSlotActions(string _objectTag)
+    private void AplicationItemToSlotActions(GameObject _objectTag)
     {
-        if(itemsActions.AplicationObject(_objectTag))
+        if(itemsActions.AplicationObject(_objectTag.tag))
         {
             ClearItemDataToSlotActions();
         }

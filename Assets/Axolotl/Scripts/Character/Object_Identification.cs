@@ -32,8 +32,14 @@ public class Object_Identification : MonoBehaviour
         }
     }
 
-    public void RemoveObject(GameObject obj)
+    public void RemoveObject(GameObject obj = null)
     {
+        if (obj == null)
+        {
+            if (detectedObjects.Count > 0)
+                detectedObjects.RemoveAt(0);
+        }
+        
         if (detectedObjects.Contains(obj))
         {
             detectedObjects.Remove(obj);

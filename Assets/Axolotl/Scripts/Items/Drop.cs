@@ -30,7 +30,7 @@ public class Drop : MonoBehaviour
         DropItemsFromPosition(dropPosition, itemInfo.DropedTag);
     }
 
-    private ItemTag GetItemTagFromObject(GameObject obj)
+    public ItemTag GetItemTagFromObject(GameObject obj)
     {
         foreach (ItemTag tag in System.Enum.GetValues(typeof(ItemTag)))
         {
@@ -71,7 +71,7 @@ public class Drop : MonoBehaviour
         Debug.Log($"Выброшено {tagsToDrop.Length} предметов из позиции: {position}");
     }
 
-    private void DropSingleItem(Vector3 position, ItemTag tag)
+    public void DropSingleItem(Vector3 position, ItemTag tag)
     {
         // Найти префаб для тега
         ItemInform dropItemInfo = FindItemInfoByTag(tag);
